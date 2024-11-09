@@ -1,3 +1,11 @@
+struct Gainvalues {
+    std::vector<float> xvalues {};
+    std::vector<float> yvalues {};
+    std::vector<float> timeouts {};
+    float lerp(float initialerror, int x1, int x2);
+    float findgain(float initialerror);
+};
+
 #include "lemlib\chassis\gainscheduler.hpp"
 float Gainvalues::findgain(float initialerror)  {
     if(fabs(initialerror) <= xvalues[0]) {
